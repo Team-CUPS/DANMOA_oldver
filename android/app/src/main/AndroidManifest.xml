@@ -5,7 +5,7 @@
 
 
     <application
-        android:label="backup0316"
+        android:label="github-test"
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
@@ -45,7 +45,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="backup0316" android:host="backup0316.com" />
+                <data android:scheme="githubtest" android:host="githubtest.com" />
             </intent-filter>
 
         </activity>

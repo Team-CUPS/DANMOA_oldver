@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class Backup0316FirebaseUser extends BaseAuthUser {
-  Backup0316FirebaseUser(this.user);
+class GithubTestFirebaseUser extends BaseAuthUser {
+  GithubTestFirebaseUser(this.user);
   User? user;
   @override
   bool get loggedIn => user != null;
@@ -55,17 +55,17 @@ class Backup0316FirebaseUser extends BaseAuthUser {
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
   static BaseAuthUser fromFirebaseUser(User? user) =>
-      Backup0316FirebaseUser(user);
+      GithubTestFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> backup0316FirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> githubTestFirebaseUserStream() => FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = Backup0316FirebaseUser(user);
+        currentUser = GithubTestFirebaseUser(user);
         return currentUser!;
       },
     );
